@@ -8,10 +8,56 @@
             <div class="temperature">{{14.40 | number: "1.0-0"}}°C</div>
         </div>
     </div>
+
     
     <div class="lowerData">
+      <div class="moreInfoLabel">
+        More info
+      </div>
+      <div class="moreInfoContainer">
+        <div class="infoBlock">
+            <div class="infoBlockLabel">
+                <img src="../assets/minTemp.jpg">
+                <span>Min</span>
+            </div>
+            <div class="infoBlockValue">
+                10°C
+            </div>
+        </div>
 
+        <div class="infoBlock">
+            <div class="infoBlockLabel">
+                <img src="../assets/maxTemp.png">
+                <span>Max</span>
+            </div>
+            <div class="infoBlockValue">
+                20°C
+            </div>
+        </div>
+
+        <div class="infoBlock">
+            <div class="infoBlockLabel">
+                <img src="../assets/humidity.png">
+                <span>Humidity</span>
+            </div>
+            <div class="infoBlockValue">
+                33%
+            </div>
+        </div>
+
+        <div class="infoBlock">
+            <div class="infoBlockLabel">
+                <img src="../assets/wind.jpg">
+                <span>Wind</span>
+            </div>
+            <div class="infoBlockValue">
+                7mph
+            </div>
+        </div>
+      </div>
     </div>
 </div>
 
 <router-outlet></router-outlet>
+
+<!--°-->
