@@ -20,7 +20,7 @@ export class WeatherService {
         .set(environment.XRapidAPIKeyName, environment.XRapidAPIKeyValue),
       // Adding parameters to format/customize the URL parameters of the API to get the data we want
       params: new HttpParams()
-        .set('q', cityName) // Got from the URL of the API
+        .set('q', cityName) // Got from the URL of the API, only required param
         .set('units', 'metric') // Got from the URL of the API
         .set('mode', 'json') // Got from the URL of the API
       
