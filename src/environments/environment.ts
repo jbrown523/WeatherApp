@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  weatherAPIURL: 'https://community-open-weather-map.p.rapidapi.com/weather?q=London%2Cuk&lat=0&lon=0&callback=test&id=2172797&lang=null&units=imperial&mode=xml',
+  weatherAPIURL: 'https://community-open-weather-map.p.rapidapi.com/weather?q=Ruston&lat=0&lon=0&callback=test&id=2172797&lang=null&units=imperial&mode=xml',
   XRapidAPIKeyName: 'X-RapidAPI-Key',
   XRapidAPIKeyValue: '77694bf86fmsh7d3c41edb2a69abp18a385jsnfa382dc1c972',
   XRapidAPIHostName: 'XRapid-API-Host',
