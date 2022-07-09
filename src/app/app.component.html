@@ -1,7 +1,12 @@
 <div class="container">
     <div class="upperData">
-        <img src="./assets/hot.jpg" *ngif="14 > 15"> 
-        <img src="./assets/cold.jpg" *ngif="14 <= 15"> 
+        <img src="../assets/cold.jpg" alt=""> 
+        <img src="../assets/hot.jpg" alt="" *ngif="14 > 15">
+        
+        <div class= "weatherData">
+            <div class="location">Bossier City</div>
+            <div class="temperature">{{14.40 | number: "1.0-0"}}°C</div>
+        </div>
     </div>
     
     <div class="lowerData">
