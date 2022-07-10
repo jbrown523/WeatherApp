@@ -17,11 +17,11 @@ export class WeatherService {
     // API call to get weather data
     // js fetch
     // Map the weather data to model here <weatherData>
-    return this.http.get<WeatherData>(environment.weatherAPIURL, {
+    return this.http.get<WeatherData>(environment.weatherApiBaseUrl, {
       // MUST HAVE to communicate with the API server
       headers: new HttpHeaders()
-        .set(environment.XRapidAPIHostName, environment.XRapidAPIHostValue)
-        .set(environment.XRapidAPIKeyName, environment.XRapidAPIKeyValue),
+        .set(environment.XRapidAPIHostHeaderName, environment.XRapidAPIHostHeaderValue)
+        .set(environment.XRapidAPIKeyHeaderName, environment.XRapidAPIKeyHeaderValue),
       // Adding parameters to format/customize the URL parameters of the API to get the data we want
       params: new HttpParams()
         .set('q', cityName) // Got from the URL of the API, only required param

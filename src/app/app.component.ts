@@ -1,31 +1,39 @@
+
 import { Component, OnInit } from '@angular/core';
-import { WeatherService } from './services/weather.service';
 import { WeatherData } from './models/weatherModel';
+import { WeatherService } from './services/weather.service';
+
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
 })
- 
 export class AppComponent implements OnInit {
 
-  // Inject service into constructor, so we can call it directly
-  constructor(private weatherService: WeatherService) { 
+    constructor(private weatherService: WeatherService) {
 
-  }
+    }
 
-  // :Of type 
-  // ? Can be undefined to start
-  weatherData?: WeatherData
-  cityName: string = 'Shreveport';
+    cityName: string = 'Shreveport';
+    weatherData?: WeatherData;
 
-  ngOnInit(): void {
-    this.weatherService.getWeatherData('Shreveport')
-      .subscribe({
-        next: (res) => { 
-          this.weatherData = res; // Assign weather data to response, so we can call in our app
-          console.log(res);
+    ngOnInit(): void {
+    this.getWeatherData(this.cityName);
+    this.cityName = '';
+    }
+
+    onSubmit() {
+    this.getWeatherData(this.cityName);
+    this.cityName = '';
+    }
+
+    private getWeatherData(cityName: string) {
+    this.weatherService.getWeatherData(cityName)
+    .subscribe({
+        next: (response) => {
+        this.weatherData = response;
+        console.log(response);
         }
-    })
-  }
+    });
+    }
 }

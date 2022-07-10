@@ -4,11 +4,11 @@
 
 export const environment = {
   production: false,
-  weatherAPIURL: 'https://community-open-weather-map.p.rapidapi.com/weather?q=Ruston&lat=0&lon=0&callback=test&id=2172797&lang=null&units=imperial&mode=xml',
-  XRapidAPIKeyName: 'X-RapidAPI-Key',
-  XRapidAPIKeyValue: '77694bf86fmsh7d3c41edb2a69abp18a385jsnfa382dc1c972',
-  XRapidAPIHostName: 'XRapid-API-Host',
-  XRapidAPIHostValue: 'community-open-weather-map.p.rapidapi.com'
+  weatherApiBaseUrl: 'https://community-open-weather-map.p.rapidapi.com/weather?q=Ruston&lat=0&lon=0&callback=test&id=2172797&lang=null&units=imperial&mode=xml',
+  XRapidAPIKeyHeaderName: 'X-RapidAPI-Key',
+  XRapidAPIKeyHeaderValue: '77694bf86fmsh7d3c41edb2a69abp18a385jsnfa382dc1c972',
+  XRapidAPIHostHeaderName: 'XRapid-API-Host',
+  XRapidAPIHostHeaderValue: 'community-open-weather-map.p.rapidapi.com'
 
 };
 
