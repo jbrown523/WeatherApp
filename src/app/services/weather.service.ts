@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { weatherData } from '../models/weatherModel';
+import { WeatherData } from '../models/weatherModel';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -13,11 +13,11 @@ export class WeatherService {
 
   // Get weather data**
   // : <returnType>
-  getWeatherData(cityName: string): Observable<weatherData> {
+  getWeatherData(cityName: string): Observable<WeatherData> {
     // API call to get weather data
     // js fetch
     // Map the weather data to model here <weatherData>
-    return this.http.get<weatherData>(environment.weatherAPIURL, {
+    return this.http.get<WeatherData>(environment.weatherAPIURL, {
       // MUST HAVE to communicate with the API server
       headers: new HttpHeaders()
         .set(environment.XRapidAPIHostName, environment.XRapidAPIHostValue)

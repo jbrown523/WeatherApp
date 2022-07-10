@@ -3,7 +3,7 @@
 // json > typescript & paste
 
 // Change Root to weatherData
-export interface weatherData {
+export interface WeatherData {
   coord: Coord
   weather: Weather[]
   base: string
@@ -34,7 +34,7 @@ export interface Weather {
 export interface Main {
   temp: number
   feelslike: number
-  temp_min: number  // added the underscore
+  temp_min: number
   temp_max: number
   pressure: number
   humidity: number

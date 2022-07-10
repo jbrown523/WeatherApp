@@ -1,63 +1,63 @@
-<div class="container">
+<div class="container" *ngIf="weatherData">
     <div class="upperData">
-        <img src="../assets/cold.jpg" alt=""> 
-        <img src="../assets/hot.jpg" alt="">
-        
-        <div class= "weatherData">
-            <div class="location">Bossier City</div>
-            <div class="temperature">{{14.40 | number: "1.0-0"}}°C</div>
+        <img src="../assets/cold.jpg" *ngIf="weatherData.main.temp <=  15">
+        <img src="../assets/hot.jpg" *ngIf="weatherData.main.temp > 15">
+
+        <div class="weatherData">
+            <div class="location">{{weatherData.name}}</div>
+            <div class="temperature">{{weatherData.main.temp | number: "1.0-0"}}°C</div>
         </div>
     </div>
 
-    
+
     <div class="lowerData">
-      <div class="moreInfoLabel">
-        More info
-      </div>
-      <div class="moreInfoContainer">
-        <div class="infoBlock">
-            <div class="infoBlockLabel">
-                <img src="../assets/minTemp.jpg">
-                <span>Min</span>
-            </div>
-            <div class="infoBlockValue">
-                10°C
-            </div>
+        <div class="moreInfoLabel">
+            More info
         </div>
+        <div class="moreInfoContainer">
+            <div class="infoBlock">
+                <div class="infoBlockLabel">
+                    <img src="../assets/minTemp.jpg">
+                    <span>Min</span>
+                </div>
+                <div class="infoBlockValue">
+                    {{weatherData.main.temp_min}}°C
+                </div>
+            </div>
 
-        <div class="infoBlock">
-            <div class="infoBlockLabel">
-                <img src="../assets/maxTemp.png">
-                <span>Max</span>
+            <div class="infoBlock">
+                <div class="infoBlockLabel">
+                    <img src="../assets/maxTemp.png">
+                    <span>Max</span>
+                </div>
+                <div class="infoBlockValue">
+                    {{weatherData.main.temp_max}}°C
+                </div>
             </div>
-            <div class="infoBlockValue">
-                20°C
-            </div>
-        </div>
 
-        <div class="infoBlock">
-            <div class="infoBlockLabel">
-                <img src="../assets/humidity.png">
-                <span>Humidity</span>
+            <div class="infoBlock">
+                <div class="infoBlockLabel">
+                    <img src="../assets/humidity.png">
+                    <span>Humidity</span>
+                </div>
+                <div class="infoBlockValue">
+                    {{weatherData.main.humidity}%
+                </div>
             </div>
-            <div class="infoBlockValue">
-                33%
-            </div>
-        </div>
 
-        <div class="infoBlock">
-            <div class="infoBlockLabel">
-                <img src="../assets/wind.jpg">
-                <span>Wind</span>
-            </div>
-            <div class="infoBlockValue">
-                7mph
+            <div class="infoBlock">
+                <div class="infoBlockLabel">
+                    <img src="../assets/wind.jpg">
+                    <span>Wind</span>
+                </div>
+                <div class="infoBlockValue">
+                    {{weatherData.wind.speed}}mph
+                </div>
             </div>
         </div>
-      </div>
     </div>
 </div>
 
-<router-outlet></router-outlet>
 
-<!--°-->
+<router-outlet></router-outlet>
+<!--Static page without {{}}-->
